@@ -36,6 +36,13 @@ class ApiPerson{
         }
     }//fin función getAll
 
+    function add($array){
+        $person = new Persona();
+
+        $person->AgregarPersona($array);
+        $this->Exito("Agregado con exito");
+    }
+
 
     function getById($id){
         $persona = new Persona();
@@ -83,5 +90,11 @@ class ApiPerson{
         echo "<code>" . json_encode(array("mensaje" => $mensaje)) . "</code>";
 
     }
+
+    function Exito($mensaje){
+        echo "<code>" . json_encode(array("mensaje" => $mensaje)) . "</code>";
+
+    }
+
 
 }
